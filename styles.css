@@ -128,7 +128,7 @@ body::before {
 /* Sticker 5 */
 .sticker-5 {
     bottom: 15%;
-    left: 12%;
+    left: 0%;
     width: 140px;
     height: auto;
     transform: rotate(15deg);
