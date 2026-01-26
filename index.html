@@ -5,289 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AIX - Команда по робототехнике. Adapt. Innovate. eXcel.">
     <title>AIX - Команда по робототехнике</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/globals.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <!-- Декоративные PNG элементы на фоне -->
+    <!-- Навигационная панель -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="#home">
+                    <img src="images/images-svg/Название_Лого_слоган.svg" alt="AIX Logo" class="navbar-logo-image">
+                </a>
+            </div>
+            <button class="navbar-toggle" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar-menu">
+                <a href="#home" class="navbar-link">Главная</a>
+                <a href="#team" class="navbar-link">Команда</a>
+                <a href="#robot" class="navbar-link">Робот</a>
+                <a href="#contacts" class="navbar-link">Контакты</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Декоративные PNG стикеры на фоне -->
     <div class="decorative-bg">
-        <img src="images/images-png/Стикер_1.png" alt="" class="decorative-sticker sticker-1">
-        <img src="images/images-png/Стикер_2.png" alt="" class="decorative-sticker sticker-2">
-        <img src="images/images-png/Стикер_3.png" alt="" class="decorative-sticker sticker-3">
-        <img src="images/images-png/Стикер_4.png" alt="" class="decorative-sticker sticker-4">
-        <img src="images/images-png/Стикер_5.png" alt="" class="decorative-sticker sticker-5">
-        <img src="images/images-png/Стикер_6.png" alt="" class="decorative-sticker sticker-6">
-        <img src="images/images-png/Стикер_7.png" alt="" class="decorative-sticker sticker-7">
-        <img src="images/images-png/Стикер_8.png" alt="" class="decorative-sticker sticker-8">
-        <img src="images/images-png/Стикер_9.png" alt="" class="decorative-sticker sticker-9">
+        <img src="images/images-png/Стикер_1.png" class="decorative-sticker sticker-1">
+        <img src="images/images-png/Стикер_2.png" class="decorative-sticker sticker-2">
+        <img src="images/images-png/Стикер_3.png" class="decorative-sticker sticker-3">
+        <img src="images/images-png/Стикер_4.png" class="decorative-sticker sticker-4">
+        <img src="images/images-png/Стикер_5.png" class="decorative-sticker sticker-5">
+        <img src="images/images-png/Стикер_6.png" class="decorative-sticker sticker-6">
+        <img src="images/images-png/Стикер_7.png" class="decorative-sticker sticker-7">
+        <img src="images/images-png/Стикер_8.png" class="decorative-sticker sticker-8">
+        <img src="images/images-png/Стикер_9.png" class="decorative-sticker sticker-9">
     </div>
-
-    <!-- Header с логотипом -->
-    <header class="header">
-        <div class="container">
-            <div class="logo-container">
-                <img src="images/images-svg/Название_Лого_слоган.svg" alt="AIX Logo" class="logo-image">
-            </div>
-        </div>
-    </header>
-
-    <!-- Общее фото команды -->
-    <section class="team-photo-section">
-        <div class="container">
-            <div class="team-photo-wrapper">
-                <img src="images/team-photo.jpg" alt="Фото команды AIX" class="team-photo">
-                <!-- Placeholder - замените на реальное фото -->
-                <div class="photo-placeholder">
-                    <p>Добавьте фото команды</p>
-                    <span>images/team-photo.jpg</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Участники команды -->
-    <section class="team-members">
-        <div class="container">
-            <h2 class="section-title">Наша команда</h2>
-            <div class="members-grid">
-                <!-- Тренер -->
-                <div class="member-card member-card-coach">
-                    <div class="member-photo-wrapper">
-                        <img src="images/coach.jpg" alt="Тренер команды" class="member-photo">
-                        <div class="photo-placeholder">
-                            <p>Фото тренера</p>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Имя Фамилия</h3>
-                        <p class="member-role">Тренер</p>
-                        <div class="member-contacts">
-                            <a href="mailto:coach@example.com" class="contact-link">
-                                <span>📧</span> coach@example.com
-                            </a>
-                            <a href="https://t.me/coach_username" class="contact-link" target="_blank" rel="noopener noreferrer">
-                                <span>✈️</span> @coach_username
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Участник 1 -->
-                <div class="member-card">
-                    <div class="member-photo-wrapper">
-                        <img src="images/member1.jpg" alt="Участник команды" class="member-photo">
-                        <div class="photo-placeholder">
-                            <p>Фото участника</p>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Имя Фамилия</h3>
-                        <p class="member-role">Роль в команде</p>
-                        <div class="member-contacts">
-                            <a href="mailto:email@example.com" class="contact-link">
-                                <span>📧</span> email@example.com
-                            </a>
-                            <a href="https://t.me/username" class="contact-link" target="_blank" rel="noopener noreferrer">
-                                <span>✈️</span> @username
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Участник 2 -->
-                <div class="member-card">
-                    <div class="member-photo-wrapper">
-                        <img src="images/member2.jpg" alt="Участник команды" class="member-photo">
-                        <div class="photo-placeholder">
-                            <p>Фото участника</p>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Имя Фамилия</h3>
-                        <p class="member-role">Роль в команде</p>
-                        <div class="member-contacts">
-                            <a href="mailto:email@example.com" class="contact-link">
-                                <span>📧</span> email@example.com
-                            </a>
-                            <a href="https://t.me/username" class="contact-link" target="_blank" rel="noopener noreferrer">
-                                <span>✈️</span> @username
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Участник 3 -->
-                <div class="member-card">
-                    <div class="member-photo-wrapper">
-                        <img src="images/member3.jpg" alt="Участник команды" class="member-photo">
-                        <div class="photo-placeholder">
-                            <p>Фото участника</p>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Имя Фамилия</h3>
-                        <p class="member-role">Роль в команде</p>
-                        <div class="member-contacts">
-                            <a href="mailto:email@example.com" class="contact-link">
-                                <span>📧</span> email@example.com
-                            </a>
-                            <a href="https://t.me/username" class="contact-link" target="_blank" rel="noopener noreferrer">
-                                <span>✈️</span> @username
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Участник 4 -->
-                <div class="member-card">
-                    <div class="member-photo-wrapper">
-                        <img src="images/member4.jpg" alt="Участник команды" class="member-photo">
-                        <div class="photo-placeholder">
-                            <p>Фото участника</p>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Имя Фамилия</h3>
-                        <p class="member-role">Роль в команде</p>
-                        <div class="member-contacts">
-                            <a href="mailto:email@example.com" class="contact-link">
-                                <span>📧</span> email@example.com
-                            </a>
-                            <a href="https://t.me/username" class="contact-link" target="_blank" rel="noopener noreferrer">
-                                <span>✈️</span> @username
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Участник 5 -->
-                <div class="member-card">
-                    <div class="member-photo-wrapper">
-                        <img src="images/member5.jpg" alt="Участник команды" class="member-photo">
-                        <div class="photo-placeholder">
-                            <p>Фото участника</p>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Имя Фамилия</h3>
-                        <p class="member-role">Роль в команде</p>
-                        <div class="member-contacts">
-                            <a href="mailto:email@example.com" class="contact-link">
-                                <span>📧</span> email@example.com
-                            </a>
-                            <a href="https://t.me/username" class="contact-link" target="_blank" rel="noopener noreferrer">
-                                <span>✈️</span> @username
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Участник 6 -->
-                <div class="member-card">
-                    <div class="member-photo-wrapper">
-                        <img src="images/member6.jpg" alt="Участник команды" class="member-photo">
-                        <div class="photo-placeholder">
-                            <p>Фото участника</p>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Имя Фамилия</h3>
-                        <p class="member-role">Роль в команде</p>
-                        <div class="member-contacts">
-                            <a href="mailto:email@example.com" class="contact-link">
-                                <span>📧</span> email@example.com
-                            </a>
-                            <a href="https://t.me/username" class="contact-link" target="_blank" rel="noopener noreferrer">
-                                <span>✈️</span> @username
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Участник 7 -->
-                <div class="member-card">
-                    <div class="member-photo-wrapper">
-                        <img src="images/member7.jpg" alt="Участник команды" class="member-photo">
-                        <div class="photo-placeholder">
-                            <p>Фото участника</p>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Имя Фамилия</h3>
-                        <p class="member-role">Роль в команде</p>
-                        <div class="member-contacts">
-                            <a href="mailto:email@example.com" class="contact-link">
-                                <span>📧</span> email@example.com
-                            </a>
-                            <a href="https://t.me/username" class="contact-link" target="_blank" rel="noopener noreferrer">
-                                <span>✈️</span> @username
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Участник 8 -->
-                <div class="member-card">
-                    <div class="member-photo-wrapper">
-                        <img src="images/member8.jpg" alt="Участник команды" class="member-photo">
-                        <div class="photo-placeholder">
-                            <p>Фото участника</p>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Имя Фамилия</h3>
-                        <p class="member-role">Роль в команде</p>
-                        <div class="member-contacts">
-                            <a href="mailto:email@example.com" class="contact-link">
-                                <span>📧</span> email@example.com
-                            </a>
-                            <a href="https://t.me/username" class="contact-link" target="_blank" rel="noopener noreferrer">
-                                <span>✈️</span> @username
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Фото робота -->
-    <section class="robot-section">
-        <div class="container">
-            <h2 class="section-title">Наш робот</h2>
-            <div class="robot-photo-wrapper">
-                <img src="images/robot-photo.jpg" alt="Робот команды AIX" class="robot-photo">
-                <!-- Placeholder - замените на реальное фото -->
-                <div class="photo-placeholder">
-                    <p>Добавьте фото робота</p>
-                    <span>images/robot-photo.jpg</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer с контактами -->
-    <footer class="footer">
-        <div class="container">
+    
+    <!-- Основной контент -->
+    <main class="main-content">
+        <!-- Вёрстка будет здесь -->
+    </main>
+    
+    <!-- Футер -->
+    <footer class="footer" id="contacts">
+        <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="images/images-svg/Logo_vector.svg" alt="AIX Logo" class="footer-logo-image">
+                    <img src="images/images-svg/Лого_название.svg" alt="AIX Logo" class="footer-logo-image">
                 </div>
-                <div class="footer-contacts">
-                    <h3 class="footer-title">Контакты команды</h3>
-                    <div class="footer-contact-list">
-                        <a href="mailto:team@aix-robotics.com" class="footer-contact-link">
-                            team@aix-robotics.com
-                        </a>
-                        <a href="https://t.me/aix_team" class="footer-contact-link" target="_blank" rel="noopener noreferrer">
-                            Telegram: @aix_team
-                        </a>
-                        <a href="https://vk.com/aix_team" class="footer-contact-link" target="_blank" rel="noopener noreferrer">
-                            VK: aix_team
-                        </a>
-                        <a href="https://instagram.com/aix_team" class="footer-contact-link" target="_blank" rel="noopener noreferrer">
-                            Instagram: @aix_team
-                        </a>
-                    </div>
+                <div class="footer-social">
+                    <a href="https://t.me/aixligatex" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                        <img src="images/images-svg/Telegram_Лого.svg" alt="Telegram" class="footer-icon">
+                        <span>Telegram</span>
+                    </a>
+                    <a href="https://vk.com/club224505211" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="VK">
+                        <img src="images/images-svg/VK_Лого.svg" alt="VK" class="footer-icon">
+                        <span>VK</span>
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -295,7 +78,7 @@
             </div>
         </div>
     </footer>
-
+    
     <script src="script.js"></script>
 </body>
 </html>

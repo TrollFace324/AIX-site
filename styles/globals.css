@@ -1,0 +1,60 @@
+/* ============================================
+   Сброс стилей и базовые настройки
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--secondary-font);
+    min-height: 100vh;
+    color: var(--dark-black);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+    /* Базовый светло-серый фон */
+    background: #F5F4F8;
+    /* Отступ сверху для навигационной панели */
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Контейнер для контента */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Доступность */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Стили фокуса для доступности */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--neon-green);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Стили для печати */
+@media print {
+    body {
+        background: white;
+    }
+}

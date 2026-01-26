@@ -1,0 +1,12 @@
+/* ============================================
+   CSS Переменные - Цвета бренда
+   ============================================ */
+:root {
+    --neon-green: #AAFF16;
+    --light-gray: #EBE9F6;
+    --dark-black: #100918;
+    --deep-purple: #411774;
+    --primary-font: 'Anton', sans-serif;
+    --akrobat-font: 'Akrobat', sans-serif;
+    --secondary-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
