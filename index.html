@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/animations.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
+<body id="home">
     <!-- Навигационная панель -->
     <nav class="navbar">
         <div class="navbar-container">
@@ -30,7 +30,8 @@
             </button>
             <div class="navbar-menu">
                 <a href="#home" class="navbar-link">Главная</a>
-                <a href="#team" class="navbar-link">Команда</a>
+                <a href="#about" class="navbar-link">О команде</a>
+                <a href="#team" class="navbar-link">Участники команды</a>
                 <a href="#robot" class="navbar-link">Робот</a>
                 <a href="#contacts" class="navbar-link">Контакты</a>
             </div>
@@ -52,6 +53,186 @@
     
     <!-- Основной контент -->
     <main class="main-content">
+        <!-- Герой-карусель с фотографиями -->
+        <section class="hero-carousel" aria-label="Фотогалерея">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-1.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-1.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-1.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-2.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-2.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-2.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-3.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-3.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-3.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-4.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-4.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-4.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-5.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-5.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-5.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-6.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-6.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-6.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-7.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-7.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-7.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-8.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-8.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-8.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-9.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-9.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-9.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-10.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-10.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-10.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-11.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-11.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-11.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-12.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-12.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-12.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-slide-side carousel-slide-side--left"><img src="images/images-png/our-photo-13.png" alt="" class="carousel-img carousel-img--blur"></div>
+                    <div class="carousel-slide-center"><img src="images/images-png/our-photo-13.png" alt="" class="carousel-img"></div>
+                    <div class="carousel-slide-side carousel-slide-side--right"><img src="images/images-png/our-photo-13.png" alt="" class="carousel-img carousel-img--blur"></div>
+                </div>
+            </div>
+            <div class="hero-carousel-overlay" aria-hidden="true"></div>
+            <h1 class="hero-title">Адаптировать. Обновлять. Превосходить.</h1>
+        </section>
+        <div class="hero-carousel-spacer" aria-hidden="true"></div>
+
+        <!-- О команде -->
+        <section class="about-section" id="about" aria-label="О команде">
+            <h2 class="about-title">О команде</h2>
+            <div class="about-row">
+                <div class="about-content">
+                    <p class="about-text">AIX — команда по робототехнике, которая создаёт роботов и участвует в соревнованиях. Мы адаптируемся к новым задачам, обновляем технологии и стремимся превзойти себя в каждом проекте. Наш девиз: Adapt. Innovate. eXcel.</p>
+                </div>
+                <img src="images/images-png/Стикер_2.png" alt="" class="about-sticker" aria-hidden="true">
+            </div>
+        </section>
+
+        <!-- Участники команды -->
+        <section class="team-carousel-section" id="team" aria-label="Участники команды">
+            <h2 class="team-carousel-title">Участники команды</h2>
+            <div class="team-carousel">
+                <button type="button" class="team-carousel-arrow team-carousel-arrow--left" aria-label="Предыдущий участник">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M20 24L12 16l8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="team-carousel-arrow team-carousel-arrow--right" aria-label="Следующий участник">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M12 8l8 8-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="team-carousel-track">
+                    <article class="team-slide">
+                        <div class="team-slide-photo-wrap"><img src="images/images-png/photo-АлексейРогожников.png" alt="Алексей Рогожников" class="team-slide-photo-img"></div>
+                        <div class="team-slide-content">
+                            <h3 class="team-slide-name">Алексей Рогожников</h3>
+                            <p class="team-slide-role">Участник команды</p>
+                            <blockquote class="team-slide-quote">Адаптировать. Обновлять. Превосходить.</blockquote>
+                        </div>
+                    </article>
+                    <article class="team-slide">
+                        <div class="team-slide-photo-wrap"><img src="images/images-png/photo-АндрейПетров.png" alt="Андрей Петров" class="team-slide-photo-img"></div>
+                        <div class="team-slide-content">
+                            <h3 class="team-slide-name">Андрей Петров</h3>
+                            <p class="team-slide-role">Участник команды</p>
+                            <blockquote class="team-slide-quote">«Adapt. Innovate. eXcel.»</blockquote>
+                        </div>
+                    </article>
+                    <article class="team-slide">
+                        <div class="team-slide-photo-wrap"><img src="images/images-png/photo-ВитяГоловков.png" alt="Витя Головков" class="team-slide-photo-img"></div>
+                        <div class="team-slide-content">
+                            <h3 class="team-slide-name">Витя Головков</h3>
+                            <p class="team-slide-role">Тренер</p>
+                            <blockquote class="team-slide-quote">Робототехника — это будущее.</blockquote>
+                        </div>
+                    </article>
+                    <article class="team-slide">
+                        <div class="team-slide-photo-wrap"><img src="images/images-png/photo-ГлебКаратеев.png" alt="Глеб Каратеев" class="team-slide-photo-img"></div>
+                        <div class="team-slide-content">
+                            <h3 class="team-slide-name">Глеб Каратеев</h3>
+                            <p class="team-slide-role">Участник команды</p>
+                            <blockquote class="team-slide-quote">Команда — наша сила.</blockquote>
+                        </div>
+                    </article>
+                    <article class="team-slide">
+                        <div class="team-slide-photo-wrap"><img src="images/images-png/photo-ДанилВеденёв.png" alt="Данил Веденёв" class="team-slide-photo-img"></div>
+                        <div class="team-slide-content">
+                            <h3 class="team-slide-name">Данил Веденёв</h3>
+                            <p class="team-slide-role">Участник команды</p>
+                            <blockquote class="team-slide-quote">Создаём технологии вместе.</blockquote>
+                        </div>
+                    </article>
+                    <article class="team-slide">
+                        <div class="team-slide-photo-wrap"><img src="images/images-png/photo-ИльяПаздерин.png" alt="Илья Паздерин" class="team-slide-photo-img"></div>
+                        <div class="team-slide-content">
+                            <h3 class="team-slide-name">Илья Паздерин</h3>
+                            <p class="team-slide-role">Участник команды</p>
+                            <blockquote class="team-slide-quote">От идеи до робота.</blockquote>
+                        </div>
+                    </article>
+                    <article class="team-slide">
+                        <div class="team-slide-photo-wrap"><img src="images/images-png/photo-ЛевКилин.png" alt="Лев Килин" class="team-slide-photo-img"></div>
+                        <div class="team-slide-content">
+                            <h3 class="team-slide-name">Лев Килин</h3>
+                            <p class="team-slide-role">Участник команды</p>
+                            <blockquote class="team-slide-quote">Инженерный подход решает.</blockquote>
+                        </div>
+                    </article>
+                    <article class="team-slide">
+                        <div class="team-slide-photo-wrap"><img src="images/images-png/photo-МатвейТимофеев.png" alt="Матвей Тимофеев" class="team-slide-photo-img"></div>
+                        <div class="team-slide-content">
+                            <h3 class="team-slide-name">Матвей Тимофеев</h3>
+                            <p class="team-slide-role">Участник команды</p>
+                            <blockquote class="team-slide-quote">Каждая деталь важна.</blockquote>
+                        </div>
+                    </article>
+                    <article class="team-slide">
+                        <div class="team-slide-photo-wrap"><img src="images/images-png/photo-МихаилДурновцев.png" alt="Михаил Дурновцев" class="team-slide-photo-img"></div>
+                        <div class="team-slide-content">
+                            <h3 class="team-slide-name">Михаил Дурновцев</h3>
+                            <p class="team-slide-role">Участник команды</p>
+                            <blockquote class="team-slide-quote">Программируем победы.</blockquote>
+                        </div>
+                    </article>
+                    <article class="team-slide">
+                        <div class="team-slide-photo-wrap"><img src="images/images-png/photo-НадеждаПоспелова.png" alt="Надежда Поспелова" class="team-slide-photo-img"></div>
+                        <div class="team-slide-content">
+                            <h3 class="team-slide-name">Надежда Поспелова</h3>
+                            <p class="team-slide-role">Тренер</p>
+                            <blockquote class="team-slide-quote">Вместе мы AIX.</blockquote>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- Вёрстка будет здесь -->
     </main>
     

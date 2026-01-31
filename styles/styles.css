@@ -34,7 +34,6 @@
     height: 50px;
     width: auto;
     filter: brightness(0) invert(1);
-    transition: opacity 0.3s ease;
 }
 
 .navbar-logo a:hover .navbar-logo-image {
@@ -61,7 +60,6 @@
     height: 3px;
     background: #EBE9F6;
     border-radius: 2px;
-    transition: all 0.3s ease;
 }
 
 /* Меню навигации */
@@ -77,7 +75,6 @@
     font-size: 16px;
     color: #EBE9F6;
     text-decoration: none;
-    transition: color 0.3s ease;
     position: relative;
 }
 
@@ -93,7 +90,6 @@
     width: 0;
     height: 2px;
     background: var(--neon-green);
-    transition: width 0.3s ease;
 }
 
 .navbar-link:hover::after {
@@ -116,7 +112,6 @@
         padding: 30px 20px;
         gap: 20px;
         transform: translateX(100%);
-        transition: transform 0.3s ease;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     
@@ -168,15 +163,16 @@ body {
     background-blend-mode: normal, overlay, normal;
     background-attachment: scroll;
     min-height: 100vh;
+    position: relative;
 }
 
-/* Контейнер для декоративных стикеров */
+/* Контейнер для декоративных стикеров — от конца героя до низа страницы (растягивается с контентом) */
 .decorative-bg {
     position: absolute;
-    top: 70px;
+    top: 540px;
     left: 0;
-    width: 100%;
-    height: calc(100% - 70px);
+    right: 0;
+    bottom: 0;
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
@@ -189,85 +185,77 @@ body {
     mix-blend-mode: multiply;
 }
 
-/* Стикер 1 */
+/* Стикеры — позиции только в области секций (ниже героя) */
 .sticker-1 {
-    top: 8%;
-    left: 3%;
+    top: 5%;
+    left: 2%;
     width: 150px;
     height: auto;
-    transform: rotate(-15deg);
+    transform: rotate(-12deg);
 }
 
-/* Стикер 2 */
 .sticker-2 {
-    top: 12%;
-    right: 5%;
+    top: 18%;
+    right: 4%;
     width: 120px;
     height: auto;
-    transform: rotate(20deg);
+    transform: rotate(18deg);
 }
 
-/* Стикер 3 */
 .sticker-3 {
-    top: 55%;
-    left: 8%;
+    top: 48%;
+    left: 6%;
     width: 180px;
     height: auto;
-    transform: rotate(10deg);
+    transform: rotate(8deg);
 }
 
-/* Стикер 4 */
 .sticker-4 {
-    top: 45%;
-    right: 8%;
+    top: 38%;
+    right: 7%;
     width: 100px;
     height: auto;
-    transform: rotate(-25deg);
+    transform: rotate(-22deg);
 }
 
-/* Стикер 5 */
 .sticker-5 {
-    bottom: 15%;
-    left: 0%;
+    bottom: 22%;
+    left: 1%;
     width: 140px;
     height: auto;
-    transform: rotate(15deg);
+    transform: rotate(14deg);
 }
 
-/* Стикер 6 */
 .sticker-6 {
-    bottom: 18%;
-    right: 10%;
+    bottom: 12%;
+    right: 8%;
     width: 160px;
     height: auto;
-    transform: rotate(-20deg);
+    transform: rotate(-19deg);
 }
 
-/* Стикер 7 */
 .sticker-7 {
-    top: 32%;
-    left: 22%;
+    top: 28%;
+    left: 18%;
     width: 130px;
     height: auto;
-    transform: rotate(-10deg);
+    transform: rotate(-8deg);
 }
 
-/* Стикер 8 */
 .sticker-8 {
-    top: 22%;
-    right: 25%;
+    top: 6%;
+    right: 20%;
     width: 110px;
     height: auto;
-    transform: rotate(25deg);
+    transform: rotate(24deg);
 }
 
-/* Стикер 9 */
 .sticker-9 {
-    top: 65%;
-    left: 28%;
+    top: 62%;
+    left: 25%;
     width: 170px;
     height: auto;
-    transform: rotate(-18deg);
+    transform: rotate(-16deg);
 }
 
 /* Адаптивность для стикеров */
@@ -301,12 +289,376 @@ body {
 }
 
 /* ============================================
+   Герой-карусель
+   ============================================ */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.hero-carousel-spacer {
+    width: 100%;
+    height: 5px;
+    background: #000;
+}
+
+.carousel-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0;
+    z-index: 0;
+}   
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-slide-side {
+    width: 10%;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-slide-center {
+    width: 80%;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-slide-center .carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-slide-side .carousel-img--blur {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 1000%;
+    object-fit: cover;
+    display: block;
+    filter: blur(12px);
+    -webkit-filter: blur(12px);
+}
+
+.carousel-slide-side--left .carousel-img--blur {
+    left: 0;
+    object-position: left center;
+}
+
+.carousel-slide-side--right .carousel-img--blur {
+    right: 0;
+    left: auto;
+    object-position: right center;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(60, 60, 60, 0.7);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0 20px;
+    font-family: 'Akrobat', sans-serif;
+    font-weight: 400;
+    font-size: clamp(28px, 5vw, 56px);
+    color: #fff;
+    text-align: center;
+    z-index: 3;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   О команде
+   ============================================ */
+.about-section {
+    padding: 60px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-title {
+    font-family: var(--akrobat-font);
+    font-weight: 700;
+    font-size: clamp(42px, 4vw, 64px);
+    color: var(--dark-black);
+    text-align: left;
+    margin: 0 0 24px;
+}
+
+.about-row {
+    display: flex;
+    align-items: center;
+}
+
+.about-content {
+    flex: 1;
+    max-width: 720px;
+}
+
+.about-sticker {
+    flex-shrink: 0;
+    width: 200px;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .about-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-sticker {
+        width: 100px;
+    }
+}
+
+.about-text {
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: clamp(22px, 1.8vw, 32px);
+    color: var(--dark-black);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ============================================
+   Карусель участников
+   ============================================ */
+.team-carousel-section {
+    padding: 60px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-carousel-title {
+    font-family: var(--akrobat-font);
+    font-weight: 700;
+    font-size: clamp(42px, 4vw, 64px);
+    color: var(--dark-black);
+    text-align: left;
+    margin: 0 0 40px;
+}
+
+.team-carousel {
+    position: relative;
+    min-height: 400px;
+}
+
+.team-carousel-track {
+    position: relative;
+    width: 100%;
+    min-height: 380px;
+}
+
+.team-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 40px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+}
+
+.team-slide.active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.team-slide-photo-wrap {
+    width: 40%;
+    flex-shrink: 0;
+    aspect-ratio: 9 / 9.6;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--light-gray);
+}
+
+.team-slide-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.team-slide-content {
+    width: 60%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.team-slide-name {
+    font-family: var(--akrobat-font);
+    font-weight: 700;
+    font-size: clamp(34px, 3vw, 44px);
+    color: var(--dark-black);
+    margin: 0 0 12px;
+}
+
+.team-slide-role {
+    font-family: var(--akrobat-font);
+    font-weight: 600;
+    font-size: clamp(18px, 1.5vw, 24px);
+    color: var(--deep-purple);
+    margin: 0 0 24px;
+}
+
+.team-slide-quote {
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: clamp(24px, 2vw, 30px);
+    color: var(--dark-black);
+    margin: 0;
+    line-height: 1.4;
+    position: relative;
+}
+
+.team-slide-quote::before {
+    content: '';
+    display: inline-block;
+    width: 0.75em;
+    height: 0.85em;
+    background-color: var(--deep-purple);
+    mask-image: url('../images/images-svg/quote.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: url('../images/images-svg/quote.svg');
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    vertical-align: top;
+    margin-right: 0.15em;
+    transform: translateY(-0.05em);
+}
+
+.team-slide-quote::after {
+    content: '';
+    display: inline-block;
+    width: 0.75em;
+    height: 0.85em;
+    background-color: var(--deep-purple);
+    mask-image: url('../images/images-svg/quote.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: url('../images/images-svg/quote.svg');
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    transform: scaleX(-1) translateY(0.05em);
+    vertical-align: bottom;
+    margin-left: 0.15em;
+}
+
+.team-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--dark-black);
+    color: var(--light-gray);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.team-carousel-arrow:hover {
+    background: var(--deep-purple);
+    color: #fff;
+}
+
+.team-carousel-arrow--left {
+    left: -24px;
+}
+
+.team-carousel-arrow--right {
+    right: -24px;
+}
+
+@media (max-width: 768px) {
+    .team-slide {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-slide-photo-wrap {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .team-slide-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .team-carousel-arrow--left {
+        left: 8px;
+    }
+
+    .team-carousel-arrow--right {
+        right: 8px;
+    }
+}
+
+/* ============================================
    Основной контент
    ============================================ */
 .main-content {
-    flex: 1;
-    position: relative;
-    z-index: 1;
+    min-height: 100vh;
 }
 
 /* ============================================
@@ -361,7 +713,6 @@ body {
     font-family: var(--akrobat-font);
     font-weight: 600;
     font-size: 16px;
-    transition: color 0.3s ease, transform 0.3s ease;
     padding: 8px 12px;
     border-radius: 8px;
 }
@@ -376,7 +727,6 @@ body {
     height: 24px;
     object-fit: contain;
     filter: brightness(0) invert(1);
-    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .footer-social-link:hover .footer-icon {

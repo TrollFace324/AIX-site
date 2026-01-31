@@ -1,3 +1,49 @@
 /* ============================================
    Анимации и переходы
    ============================================ */
+
+/* Навигация */
+.navbar-logo-image {
+   transition: opacity 0.3s ease;
+}
+
+.navbar-toggle span {
+   transition: all 0.3s ease;
+}
+
+.navbar-link {
+   transition: color 0.3s ease;
+}
+
+.navbar-link::after {
+   transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+   .navbar-menu {
+      transition: transform 0.3s ease;
+   }
+}
+
+/* Герой-карусель */
+.carousel-slide {
+   transition: opacity 0.8s ease-in-out;
+}
+
+/* Карусель участников */
+.team-slide {
+   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.team-carousel-arrow {
+   transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Футер */
+.footer-social-link {
+   transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icon {
+   transition: transform 0.3s ease, filter 0.3s ease;
+}
