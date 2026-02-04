@@ -227,8 +227,8 @@ body {
 }
 
 .sticker-6 {
-    bottom: 12%;
-    right: 8%;
+    bottom: 38%;
+    right: 10%;
     width: 160px;
     height: auto;
     transform: rotate(-19deg);
@@ -462,6 +462,75 @@ body {
 }
 
 /* ============================================
+   Робот
+   ============================================ */
+.robot-section {
+    padding: 60px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.robot-title {
+    font-family: var(--akrobat-font);
+    font-weight: 700;
+    font-size: clamp(42px, 4vw, 64px);
+    color: var(--dark-black);
+    text-align: left;
+    margin: 0 0 24px;
+}
+
+.robot-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.robot-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-indent: 20px;
+}
+
+.robot-text {
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: clamp(18px, 1.5vw, 24px);
+    color: var(--dark-black);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.robot-image-wrap {
+    flex-shrink: 0;
+    width: min(400px, 45%);
+    max-width: 100%;
+}
+
+.robot-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .robot-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+    }
+
+    .robot-image-wrap {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+/* ============================================
    Карусель участников
    ============================================ */
 .team-carousel-section {
@@ -497,7 +566,6 @@ body {
     width: 100%;
     display: flex;
     align-items: stretch;
-    gap: 40px;
     opacity: 0;
     visibility: hidden;
     z-index: 0;
@@ -532,7 +600,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px 0;
+    padding: 20px 40px;
 }
 
 .team-slide-name {
