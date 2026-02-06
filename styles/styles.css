@@ -459,6 +459,7 @@ body {
     color: var(--dark-black);
     line-height: 1.5;
     margin: 0;
+    text-indent: 20px;
 }
 
 /* ============================================
