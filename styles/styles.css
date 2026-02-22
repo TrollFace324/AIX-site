@@ -580,7 +580,7 @@ body {
         margin-bottom: 16px;
     }
     .about-sticker {
-        width: 120px;
+        width: 140px;
     }
 }
 
@@ -595,17 +595,11 @@ body {
     .about-text {
         text-indent: 12px;
     }
-    .about-sticker {
-        width: 90px;
-    }
 }
 
 @media (max-width: 360px) {
     .about-section {
         padding: 24px 10px 40px;
-    }
-    .about-sticker {
-        width: 70px;
     }
 }
 
@@ -1067,7 +1061,7 @@ body {
 .footer-logo {
     display: flex;
     align-items: center;
-    padding-top: 10px;
+    padding: 10px 0;
 }
 
 .footer-logo-image {
