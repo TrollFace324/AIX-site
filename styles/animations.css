@@ -47,3 +47,26 @@
 .footer-icon {
    transition: transform 0.3s ease, filter 0.3s ease;
 }
+
+/* Подсветка заголовков при навигации: 1 с появление, 1 с затухание */
+.about-title,
+.team-carousel-title,
+.robot-title {
+   transition: color 1s ease;
+}
+
+.about-section.section-highlight .about-title,
+.team-carousel-section.section-highlight .team-carousel-title,
+.robot-section.section-highlight .robot-title {
+   color: var(--neon-green);
+}
+
+.footer-content {
+   transition: outline 1s ease, outline-offset 1s ease;
+}
+
+.footer.section-highlight .footer-content {
+   outline: 3px solid var(--neon-green);
+   outline-offset: 8px;
+   border-radius: 12px;
+}
