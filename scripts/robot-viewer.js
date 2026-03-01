@@ -345,7 +345,7 @@ const VIEWER_SETTINGS = {
 
         const loader = new GLTFLoader();
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath('./node_modules/three/examples/jsm/libs/draco/');
+        dracoLoader.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.183.2/examples/jsm/libs/draco/');
         loader.setDRACOLoader(dracoLoader);
 
         try {
