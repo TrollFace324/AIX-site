@@ -242,7 +242,9 @@
                     <p class="robot-text">Робот — это не просто набор деталей, а результат командной работы, терпения и готовности переделывать то, что не работает. Мы верим в итеративный подход: собрали, проверили, улучшили.</p>
                 </div>
                 <div class="robot-image-wrap">
-                    <img src="images/images-webp/robot-old.webp" alt="Робот команды AIX" class="robot-image">
+                    <button type="button" class="robot-mode-toggle" id="robot-mode-toggle" aria-controls="robot-viewer">3D</button>
+                    <img src="images/images-png/robot-new.png" alt="Робот команды AIX" class="robot-image" id="robot-image-2d">
+                    <div class="robot-viewer is-hidden" id="robot-viewer" role="img" aria-label="3D модель робота команды AIX"></div>
                 </div>
             </div>
         </section>
@@ -272,6 +274,15 @@
         </div>
     </footer>
     
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "./node_modules/three/build/three.module.js",
+        "three/addons/": "./node_modules/three/examples/jsm/"
+      }
+    }
+    </script>
+    <script type="module" src="scripts/robot-viewer.js"></script>
 </body>
 </html>

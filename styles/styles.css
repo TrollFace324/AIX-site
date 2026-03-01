@@ -236,7 +236,7 @@ body {
     right: 0;
     bottom: 0;
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
     overflow: hidden;
 }
 
@@ -251,73 +251,60 @@ body {
 .sticker-1 {
     top: 5%;
     left: 2%;
-    width: 150px;
-    height: auto;
     transform: rotate(-12deg);
 }
 
 .sticker-2 {
     top: 18%;
     right: 4%;
-    width: 120px;
-    height: auto;
     transform: rotate(18deg);
 }
 
 .sticker-3 {
     top: 48%;
     left: 6%;
-    width: 180px;
-    height: auto;
     transform: rotate(8deg);
 }
 
 .sticker-4 {
     top: 38%;
     right: 7%;
-    width: 100px;
-    height: auto;
     transform: rotate(-22deg);
 }
 
 .sticker-5 {
     bottom: 22%;
     left: 1%;
-    width: 140px;
-    height: auto;
     transform: rotate(14deg);
 }
 
 .sticker-6 {
     bottom: 38%;
     right: 10%;
-    width: 160px;
-    height: auto;
     transform: rotate(-19deg);
 }
 
 .sticker-7 {
     top: 28%;
     left: 18%;
-    width: 130px;
-    height: auto;
     transform: rotate(-8deg);
 }
 
 .sticker-8 {
     top: 6%;
     right: 20%;
-    width: 110px;
-    height: auto;
     transform: rotate(24deg);
 }
 
 .sticker-9 {
     top: 62%;
     left: 25%;
-    width: 170px;
-    height: auto;
     transform: rotate(-16deg);
+}
+
+.sticker-1, .sticker-2, .sticker-3, .sticker-4,
+.sticker-5, .sticker-6, .sticker-7, .sticker-8, .sticker-9 {
+    width: 5%;
 }
 
 /* Адаптивность для стикеров */
@@ -328,7 +315,7 @@ body {
     
     .sticker-1, .sticker-2, .sticker-3, .sticker-4,
     .sticker-5, .sticker-6, .sticker-7, .sticker-8, .sticker-9 {
-        width: 80px;
+        width: 10%;
     }
 }
 
@@ -339,14 +326,14 @@ body {
     
     .sticker-1, .sticker-2, .sticker-3, .sticker-4,
     .sticker-5, .sticker-6, .sticker-7, .sticker-8, .sticker-9 {
-        width: 60px;
+        width: 15%;
     }
 }
 
 @media (max-width: 480px) {
     .decorative-sticker {
         opacity: 0.08;
-        width: 50px !important;
+        width: 17% !important;
     }
 }
 
@@ -659,13 +646,153 @@ body {
     flex-shrink: 0;
     width: min(400px, 45%);
     max-width: 100%;
+    position: relative;
 }
 
 .robot-image {
     width: 100%;
-    height: auto;
+    height: 320px;
+    min-height: 280px;
     display: block;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 12px;
+    background: var(--light-gray);
+}
+
+.robot-image.is-hidden {
+    display: none;
+}
+
+.robot-viewer {
+    width: 100%;
+    height: 320px;
+    min-height: 280px;
+    background: var(--light-gray);
+    border-radius: 12px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
+.robot-viewer.is-hidden {
+    display: none;
+}
+
+.robot-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 4;
+    min-width: 44px;
+    min-height: 28px;
+    border: none;
+    border-radius: 999px;
+    padding: 4px 12px;
+    background: rgba(16, 9, 24, 0.82);
+    color: #EBE9F6;
+    font-family: var(--akrobat-font);
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.robot-mode-toggle:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.robot-viewer canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.robot-viewer-status {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    font-family: var(--akrobat-font);
+    font-size: 16px;
+    color: var(--dark-black);
+    background: rgba(235, 233, 246, 0.85);
+    z-index: 2;
+}
+
+.robot-viewer-status.is-error {
+    color: #b00020;
+}
+
+.robot-viewer-initial-pos {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 2;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: rgba(16, 9, 24, 0.72);
+    color: #EBE9F6;
+    font-family: var(--akrobat-font);
+    font-size: 13px;
+    line-height: 1.2;
+    pointer-events: none;
+}
+
+.robot-viewer-zoom {
+    position: absolute;
+    left: 10px;
+    bottom: 38px;
+    z-index: 2;
+    padding: 5px 8px;
+    border-radius: 6px;
+    background: rgba(16, 9, 24, 0.72);
+    color: #EBE9F6;
+    font-family: var(--akrobat-font);
+    font-size: 13px;
+    line-height: 1.2;
+    pointer-events: none;
+}
+
+.robot-viewer-nav {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 28px 28px;
+    grid-template-areas:
+        "rotate-left rotate-right"
+        "up up"
+        "left right"
+        "down down";
+    gap: 4px;
+}
+
+.robot-viewer-nav-rotate-left { grid-area: rotate-left; }
+.robot-viewer-nav-rotate-right { grid-area: rotate-right; }
+.robot-viewer-nav-up { grid-area: up; }
+.robot-viewer-nav-left { grid-area: left; }
+.robot-viewer-nav-right { grid-area: right; }
+.robot-viewer-nav-down { grid-area: down; }
+
+.robot-viewer-nav-btn {
+    min-width: 28px;
+    min-height: 28px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(16, 9, 24, 0.78);
+    color: #EBE9F6;
+    font-family: var(--akrobat-font);
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.robot-viewer-nav-btn:hover {
+    background: rgba(65, 23, 116, 0.9);
 }
 
 @media (max-width: 1024px) {
@@ -681,6 +808,13 @@ body {
     }
     .robot-image-wrap {
         width: min(360px, 45%);
+    }
+    .robot-viewer {
+        height: 300px;
+    }
+    .robot-image {
+        height: 300px;
+        min-height: 240px;
     }
 }
 
@@ -701,6 +835,14 @@ body {
         max-width: 320px;
         margin: 0 auto;
     }
+    .robot-viewer {
+        height: 280px;
+        min-height: 240px;
+    }
+    .robot-image {
+        height: 280px;
+        min-height: 240px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -717,6 +859,14 @@ body {
     .robot-image-wrap {
         max-width: 280px;
     }
+    .robot-viewer {
+        height: 260px;
+        min-height: 220px;
+    }
+    .robot-image {
+        height: 260px;
+        min-height: 220px;
+    }
 }
 
 @media (max-width: 360px) {
@@ -725,6 +875,14 @@ body {
     }
     .robot-image-wrap {
         max-width: 240px;
+    }
+    .robot-viewer {
+        height: 240px;
+        min-height: 200px;
+    }
+    .robot-image {
+        height: 240px;
+        min-height: 200px;
     }
 }
 
