@@ -7,6 +7,10 @@
    transition: opacity 0.3s ease;
 }
 
+.navbar-logo a:hover .navbar-logo-image {
+   opacity: 0.8;
+}
+
 .navbar-toggle span {
    transition: all 0.3s ease;
 }
@@ -19,9 +23,29 @@
    transition: width 0.3s ease;
 }
 
+.navbar-link:hover {
+   color: var(--neon-green);
+}
+
+.navbar-link:hover::after {
+   width: 100%;
+}
+
 @media (max-width: 768px) {
    .navbar-menu {
       transition: transform 0.3s ease;
+   }
+
+   .navbar-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+   }
+
+   .navbar-toggle.active span:nth-child(2) {
+      opacity: 0;
+   }
+
+   .navbar-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
    }
 }
 
@@ -39,6 +63,11 @@
    transition: background 0.3s ease, color 0.3s ease;
 }
 
+.team-carousel-arrow:hover {
+   background: var(--deep-purple);
+   color: #fff;
+}
+
 /* Футер */
 .footer-social-link {
    transition: color 0.3s ease, transform 0.3s ease;
@@ -51,14 +80,29 @@
 /* Подсветка заголовков при навигации: 1 с появление, 1 с затухание */
 .about-title,
 .team-carousel-title,
-.robot-title {
+.robot-title,
+.contacts-title {
    transition: color 1s ease;
 }
 
 .about-section.section-highlight .about-title,
 .team-carousel-section.section-highlight .team-carousel-title,
-.robot-section.section-highlight .robot-title {
+.robot-section.section-highlight .robot-title,
+.contacts-section.section-highlight .contacts-title {
    color: var(--neon-green);
+}
+
+.contacts-link:hover {
+   color: var(--dark-black);
+   transform: translateY(-2px);
+}
+
+.contacts-link:hover .contacts-icon {
+   transform: none;
+}
+
+.robot-viewer-nav-btn:hover {
+   background: rgba(65, 23, 116, 0.9);
 }
 
 .footer-content {
